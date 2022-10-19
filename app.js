@@ -19,43 +19,6 @@ const articleSchema = new mongoose.Schema({
 
 const Article = mongoose.model("Article",articleSchema);
 
-// app.get("/articles",function(req,res){
-//
-//   Article.find(function(err,foundArticles){
-//     // console.log(foundArticles);
-//     if(!err)
-//       res.send(foundArticles);
-//     else
-//       res.send(err);
-//   })
-// })
-//
-// app.post("/articles",function(req,res){
-//   const newArticle = new Article({
-//     title: req.body.title,
-//     content: req.body.content
-//   });
-//
-//   newArticle.save(function(err){
-//     if(!err)
-//       res.send("Inserted Successfully!");
-//     else
-//       res.send("Insert Unsuccesfull!")
-//   });
-//
-// })
-//
-// app.delete("/articles",function(req,res){
-//   const articleTitle = req.body.title;
-//   Article.deleteMany({},function(err){
-//     if(!err)
-//       res.send("Deletion Successfull!");
-//     else {
-//       res.send("Deletion Unsuccesfull!");
-//     }
-//   });
-// })
-
 app.route("/articles")
   .get(function(req,res){
       Article.find(function(err,foundArticles){
